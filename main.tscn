@@ -1,0 +1,23 @@
+[gd_scene load_steps=6 format=3 uid="uid://caslftbwchkt"]
+
+[ext_resource type="Texture2D" uid="uid://ccrkejodhxq8s" path="res://Assets/wallpaperfreeway.png" id="1_fsg33"]
+[ext_resource type="Script" path="res://main.gd" id="1_ou8ba"]
+[ext_resource type="PackedScene" uid="uid://bs8acxmm8xust" path="res://linha_chegada.tscn" id="2_f2qjb"]
+[ext_resource type="PackedScene" uid="uid://y64s6jh7ajpi" path="res://player.tscn" id="3_pi25n"]
+[ext_resource type="PackedScene" uid="uid://loksuq0q0hwn" path="res://player2.tscn" id="4_lb76k"]
+
+[node name="Main" type="Node"]
+script = ExtResource("1_ou8ba")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_fsg33")
+centered = false
+
+[node name="ganha" parent="." instance=ExtResource("2_f2qjb")]
+position = Vector2(638.66, 64)
+
+[node name="Player" parent="." instance=ExtResource("3_pi25n")]
+position = Vector2(320, 696)
+
+[node name="Player2" parent="." instance=ExtResource("4_lb76k")]
+position = Vector2(944, 696)

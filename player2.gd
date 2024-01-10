@@ -14,7 +14,7 @@ func _process(delta):
 	if Input.is_action_pressed("sobe"):
 		velocity.y -= 1
 	if velocity.length() > 0:
-		velocity = velocity.is_normalized() * speed
+		#velocity = velocity.is_normalized() * speed
 		$AnimatedSprite2D.play()
 	else:
 		$AnimatedSprite2D.stop()
