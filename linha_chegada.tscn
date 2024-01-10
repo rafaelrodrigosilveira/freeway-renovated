@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bs8acxmm8xust"]
+
+[ext_resource type="Texture2D" uid="uid://b0mmjigian1vg" path="res://Assets/ganha.png" id="1_vd022"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_10v42"]
+size = Vector2(1280, 20)
+
+[node name="ganha" type="RigidBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_vd022")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_10v42")
