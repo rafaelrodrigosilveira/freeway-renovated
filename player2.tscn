@@ -1,0 +1,59 @@
+[gd_scene load_steps=11 format=3 uid="uid://loksuq0q0hwn"]
+
+[ext_resource type="Texture2D" uid="uid://crxnolj58u185" path="res://Assets/galinha/baixo/sprite_0.png" id="1_dbxaq"]
+[ext_resource type="Script" path="res://player2.gd" id="1_ega01"]
+[ext_resource type="Texture2D" uid="uid://dws0gcms1vpqa" path="res://Assets/galinha/baixo/sprite_1.png" id="2_b7fjo"]
+[ext_resource type="Texture2D" uid="uid://dpo8bc3yjta2w" path="res://Assets/galinha/baixo/sprite_2.png" id="3_lde0n"]
+[ext_resource type="Texture2D" uid="uid://d1mfn64hmi1ot" path="res://Assets/galinha/cima/sprite_0.png" id="4_70egm"]
+[ext_resource type="Texture2D" uid="uid://dsn12aeosg3xr" path="res://Assets/galinha/cima/sprite_1.png" id="5_1eb5s"]
+[ext_resource type="Texture2D" uid="uid://djgmyvufrdmee" path="res://Assets/galinha/cima/sprite_2.png" id="6_dro6f"]
+[ext_resource type="AudioStream" uid="uid://bnjnky6h2feft" path="res://Assets/sons/colide.wav" id="7_puqgy"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4aeee"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_dbxaq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_b7fjo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_lde0n")
+}],
+"loop": true,
+"name": &"baixo",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_70egm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_1eb5s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_dro6f")
+}],
+"loop": true,
+"name": &"cima",
+"speed": 8.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ack4g"]
+radius = 15.0
+
+[node name="Player2" type="Area2D"]
+script = ExtResource("1_ega01")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.3, 0.3)
+sprite_frames = SubResource("SpriteFrames_4aeee")
+animation = &"cima"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 4)
+shape = SubResource("CircleShape2D_ack4g")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_puqgy")
