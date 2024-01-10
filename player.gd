@@ -26,3 +26,13 @@ func _process(delta):
 		$AnimatedSprite2D.animation = "baixo"
 	elif velocity.y < 0:
 		$AnimatedSprite2D.animation = "cima"
+
+
+func _on_body_entered(body):
+	if body.name == "ganha":
+		emit_signal("pontua")
+	else:
+		$AudioStreamPlayer2D.play()
+	# recoloca player posição inicial
+	position.x = 320
+	position.y = 696
