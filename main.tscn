@@ -21,3 +21,14 @@ position = Vector2(320, 696)
 
 [node name="Player2" parent="." instance=ExtResource("4_lb76k")]
 position = Vector2(944, 696)
+
+[node name="horacarrorapido" type="Timer" parent="."]
+wait_time = 0.3
+autostart = true
+
+[node name="horacarrodevagar" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true
+
+[connection signal="timeout" from="horacarrorapido" to="." method="_on_horacarrorapido_timeout"]
+[connection signal="timeout" from="horacarrodevagar" to="." method="_on_horacarrodevagar_timeout"]
