@@ -7,7 +7,8 @@ var score2 = 0
 
 
 func _ready():
-	$tema_AudioStreamPlayer2D3.play()
+	$Button.hide() # esconde o botao
+	$tema_AudioStreamPlayer2D3.play() # toca a musica do game
 	randomize()
 
 # INSTANCIA NOVOS CARROS
@@ -33,6 +34,7 @@ func _on_player_pontua():
 		$ponto_AudioStreamPlayer2D.play()
 		$placar1.text = str(score1)
 	if score1 >=10:
+		$Button.show() # exibe botao de reinicio
 		$tema_AudioStreamPlayer2D3.stop()
 		$resultado.text = "Player 1 Ganhou!"
 		$ganhou_AudioStreamPlayer2D2.play()
@@ -46,8 +48,13 @@ func _on_player_2_pontua_2():
 		$ponto_AudioStreamPlayer2D.play()
 		$placar2.text = str(score2)
 	if score2 >=10:
+		$Button.show() # exibe botao de reinicio
 		$tema_AudioStreamPlayer2D3.stop()
 		$resultado.text = "Player 2 Ganhou!"
 		$ganhou_AudioStreamPlayer2D2.play()
 		$horacarrodevagar.stop()
 		$horacarrorapido.stop()
+
+
+func _on_button_pressed():
+	get_tree().reload_current_scene()

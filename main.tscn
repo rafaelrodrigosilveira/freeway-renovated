@@ -35,7 +35,6 @@ wait_time = 0.5
 autostart = true
 
 [node name="placar1" type="Label" parent="."]
-anchors_preset = -1
 offset_left = 300.0
 offset_top = 10.0
 offset_right = 320.0
@@ -46,7 +45,6 @@ text = "0"
 horizontal_alignment = 1
 
 [node name="placar2" type="Label" parent="."]
-anchors_preset = -1
 offset_left = 920.0
 offset_top = 10.0
 offset_right = 944.0
@@ -57,7 +55,6 @@ text = "0"
 horizontal_alignment = 1
 
 [node name="resultado" type="Label" parent="."]
-anchors_preset = -1
 offset_top = 10.0
 offset_right = 1280.0
 offset_bottom = 30.0
@@ -75,7 +72,24 @@ stream = ExtResource("8_deo35")
 stream = ExtResource("9_tasvt")
 volume_db = -18.0
 
+[node name="Button" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -30.0
+offset_right = 200.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("6_tr6lk")
+theme_override_font_sizes/font_size = 30
+text = "Reiniciar"
+
 [connection signal="pontua" from="Player" to="." method="_on_player_pontua"]
 [connection signal="pontua2" from="Player2" to="." method="_on_player_2_pontua_2"]
 [connection signal="timeout" from="horacarrorapido" to="." method="_on_horacarrorapido_timeout"]
 [connection signal="timeout" from="horacarrodevagar" to="." method="_on_horacarrodevagar_timeout"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

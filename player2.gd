@@ -37,3 +37,7 @@ func _on_body_entered(body):
 	# recoloca player posição inicial
 	position.x = 944
 	position.y = 696
+
+func volta():
+	position.x = 944
+	position.y = 696
