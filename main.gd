@@ -7,7 +7,8 @@ var score2 = 0
 
 
 func _ready():
-	pass 
+	$tema_AudioStreamPlayer2D3.play()
+	randomize()
 
 # INSTANCIA NOVOS CARROS
 func _on_horacarrorapido_timeout():
@@ -24,3 +25,29 @@ func _on_horacarrodevagar_timeout():
 	carrodevagar.position.x = -10
 	carrodevagar.position.y = pdevagar[randi() % pdevagar.size()] # sorteia um carro
 	carrodevagar.linear_velocity = Vector2(randf_range(300,310),0) # movimenta carro da esquerda para direita
+
+# EFETUA PONTUACAO PARA PLAYER1
+func _on_player_pontua():
+	if score1 < 10:
+		score1 +=1
+		$ponto_AudioStreamPlayer2D.play()
+		$placar1.text = str(score1)
+	if score1 >=10:
+		$tema_AudioStreamPlayer2D3.stop()
+		$resultado.text = "Player 1 Ganhou!"
+		$ganhou_AudioStreamPlayer2D2.play()
+		$horacarrodevagar.stop()
+		$horacarrorapido.stop()
+
+
+func _on_player_2_pontua_2():
+	if score2 < 10:
+		score2 +=1
+		$ponto_AudioStreamPlayer2D.play()
+		$placar2.text = str(score2)
+	if score2 >=10:
+		$tema_AudioStreamPlayer2D3.stop()
+		$resultado.text = "Player 2 Ganhou!"
+		$ganhou_AudioStreamPlayer2D2.play()
+		$horacarrodevagar.stop()
+		$horacarrorapido.stop()
