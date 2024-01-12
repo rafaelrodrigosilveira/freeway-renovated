@@ -99,7 +99,7 @@ offset_bottom = 33.0
 grow_horizontal = 2
 theme_override_fonts/font = ExtResource("6_tr6lk")
 theme_override_font_sizes/font_size = 15
-text = "Freeway 3D Renovated"
+text = "Freeway - Renovated"
 vertical_alignment = 1
 
 [node name="programador" type="Label" parent="."]
