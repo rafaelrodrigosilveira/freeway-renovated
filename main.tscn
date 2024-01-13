@@ -55,9 +55,10 @@ text = "0"
 horizontal_alignment = 1
 
 [node name="resultado" type="Label" parent="."]
-offset_top = 10.0
+offset_top = 43.0
 offset_right = 1280.0
-offset_bottom = 30.0
+offset_bottom = 115.0
+theme_override_colors/font_color = Color(0.92549, 0.839216, 0.105882, 1)
 theme_override_fonts/font = ExtResource("6_tr6lk")
 theme_override_font_sizes/font_size = 30
 horizontal_alignment = 1
@@ -92,24 +93,26 @@ text = "Reiniciar"
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -88.5
+offset_left = -302.0
 offset_top = 10.0
-offset_right = 88.5
-offset_bottom = 33.0
+offset_right = 276.0
+offset_bottom = 43.0
 grow_horizontal = 2
 theme_override_fonts/font = ExtResource("6_tr6lk")
 theme_override_font_sizes/font_size = 15
-text = "Freeway - Renovated"
+text = "Freeway - Renovated
+versão: 1.0"
+horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="programador" type="Label" parent="."]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -240.0
-offset_top = 30.0
-offset_right = 240.0
-offset_bottom = 46.0
+offset_left = -227.0
+offset_top = 690.0
+offset_right = 253.0
+offset_bottom = 713.0
 grow_horizontal = 2
 text = "Rafael Rodrigo Silveira - 2024"
 horizontal_alignment = 1
